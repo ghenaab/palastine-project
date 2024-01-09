@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="ContactStyle.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<header>
+    <div class="logo">
+        <img src="logo_pal.jpg" width="250" height="130">
+    </div>
+    <h1>Contact us!</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutUs.html">About</a></li>
+            <li><a href="Merch.html">Services</a></li>
+            <li><a href="ContactUs.html">Contact</a></li>
+            <li><a href="Reviews.html">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="contact-box">
+    <h2>Get in Touch</h2>
+    <a href="mailto:heartforpalestine@gmail.com"> Email us!</a>
+    <p> Call Us: +962 3674 8965</p>
+</div>
+<section id="contact-section">
+    <h2>Any suggestions?</h2>
+    <h3>Feel free to contact us using the form below:</h3>
+    <form>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        background-color: #6B7476;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .contact-box {
+        background-color: #f5f5f5;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #contact-section {
+        background-color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #contact-section form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact-section label,
+    #contact-section textarea,
+    #contact-section input[type="email"],
+    #contact-section input[type="text"],
+    #contact-section button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #contact-section textarea {
+        resize: vertical;
+    }
+
+    #contact-section button {
+        background-color: #6B7476;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: 768px) {
+        header {
+            padding: 30px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        nav ul {
+            justify-content: flex-end;
+        }
+
+        .contact-box {
+            text-align: left;
+        }
+
+        #contact-section form {
+            width: 50%;
+            margin: 0 auto;
+            text-align: left;
+        }
+    }
+</style>
+</body>
+</html>

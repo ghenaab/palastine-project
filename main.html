@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Shopping Store</title>
+    <script>
+        function addToCart(itemName, itemPrice) {
+            // Get cart items from local storage or create an empty array
+            var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Add selected item to cart
+            cartItems.push({ name: itemName, price: itemPrice });
+
+            // Store updated cart in local storage
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+
+            // Display confirmation to the user
+            alert(itemName + " added to cart!");
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Online Shopping Store</h1>
+
+    <table border="1">
+        <tr>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Add to Cart</th>
+        </tr>
+        <tr>
+            <td>Item 1</td>
+            <td>$10.00</td>
+            <td><button onclick="addToCart('Item 1', 10.00)">Add</button></td>
+        </tr>
+        <tr>
+            <td>Item 2</td>
+            <td>$15.00</td>
+            <td><button onclick="addToCart('Item 2', 15.00)">Add</button></td>
+        </tr>
+        <!-- Add more items as needed -->
+    </table>
+
+    <!-- Button to go to the cart page -->
+    <a href="cart.html">Go to Cart</a>
+
+</body>
+
+</html>

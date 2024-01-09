@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+  <script>
+    function removeFromCart(index) {
+      // Get cart items from local storage
+      var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+ 
+      // Remove the item from cartItems array
+      cartItems.splice(index, 1);
+ 
+      // Update cart in local storage
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+ 
+      // Refresh the cart page to reflect the changes
+      location.reload();
+    }
+ 
+    function applyDiscount() {
+      var discountCode = prompt("Enter discount code:");
+      if (discountCode === "DISCOUNT20") {
+        var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        var totalPrice = 0;
+ 
+        // Calculate total price
+        cartItems.forEach(function(item) {
+          totalPrice += parseFloat(item.price);
+        });
+ 
+        // Apply discount
+        var discountedPrice = totalPrice * 0.8;
+        var discountAmount = totalPrice - discountedPrice;
+ 
+        // Display discounted price and original price
+        alert("Original Price: $" + totalPrice.toFixed(2) + "\nDiscounted Price (20% off): $" + discountedPrice.toFixed(2) + "\nYou saved: $" + discountAmount.toFixed(2));
+      } else {
+        alert("Invalid discount code!");
+      }
+    }
+  </script>
+</head>
+<body>
+ 
+<h1>Shopping Cart</h1>
+ 
+<table border="1">
+  <tr>
+    <th>Item Name</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+  <tbody id="cartItems"></tbody>
+</table>
+ 
+<!-- Button to go back to the main store page -->
+<a href="main.html">Back to Store</a>
+ 
+<!-- Button to apply discount -->
+<button onclick="applyDiscount()">Apply Discount</button>
+ 
+<script>
+  // Retrieve cart items from local storage
+  var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+ 
+  var cartTable = document.getElementById("cartItems");
+  var totalPrice = 0;
+ 
+  // Loop through cart items and display in the cart table
+  cartItems.forEach(function(item, index) {
+    var row = cartTable.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    cell1.innerHTML = item.name;
+    cell2.innerHTML = "$" + item.price.toFixed(2);
+    cell3.innerHTML = "<button onclick='removeFromCart(" + index + ")'>Remove</button>";
+    totalPrice += parseFloat(item.price);
+  });
+ 
+  // Display total price
+  document.body.innerHTML += "<p>Total Price: $" + totalPrice.toFixed(2) + "</p>";
+</script>
+ 
+</body>
+</html>
+has context menu
